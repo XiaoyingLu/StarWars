@@ -29,11 +29,9 @@ export const {
 
 export default personSlice
 
-const API_ROOT = 'http://localhost:8080';
-
 // Thunk function
 export const getCharacterDetails = (id) => async (dispatch) => {
     dispatch(personLoading())
-    const response = await client.get(API_ROOT + '/people/' + id)
+    const response = await client.get(process.env.REACT_APP_API_ROOT + 'people/' + id)
     dispatch(personLoaded(response))
 }

@@ -35,11 +35,9 @@ export const {
 
 export default charactersSlice
 
-const API_ROOT = 'http://localhost:8080';
-
 // Thunk function
 export const getCharacterList = () => async (dispatch) => {
     dispatch(peopleLoading())
-    const response = await client.get(API_ROOT + '/people')
+    const response = await client.get(process.env.REACT_APP_API_ROOT + 'people')
     dispatch(peopleLoaded(response))
 }
