@@ -10,6 +10,23 @@ const errorHandler = (res, err) => {
     });
 }
 
+// get all people resources (only the first page)
+export const getAllPeople = (req, res, next) => {
+    axios.get(url)
+    .then(response => {
+        return response.data;
+    }).then(data => {
+        return res.status(200).json(data.results.map((person, index) => {
+            return {
+                id: index + 1,
+                name: person.name
+            }
+        }));
+    }).catch(err => {
+        return errorHandler(err);
+    });
+}
+
 const getHomePlanet = (homeworld) => {
     let homePlanet = {};
     return axios.get(homeworld)

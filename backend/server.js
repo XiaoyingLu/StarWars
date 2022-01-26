@@ -11,7 +11,7 @@ app.use(cors());
 
 const port = process.env.PORT || 4000;
 
-app.use('/people', peopleRouter);
+app.use('', peopleRouter);
 
 app.use((req, res, next) => {
     return res.status(404).json({
