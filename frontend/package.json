@@ -23,7 +23,7 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "build": "webpack --mode production",
+        "build": "rm -rf dist && webpack --mode production",
         "start": "webpack-dev-server --mode development"
     },
     "eslintConfig": {
