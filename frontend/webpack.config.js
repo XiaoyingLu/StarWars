@@ -16,7 +16,6 @@ module.exports = function (_env, argv) {
         output: {
             path: path.resolve(__dirname, "dist"),
             filename: "assets/js/[name].js",
-            publicPath: path.resolve(__dirname, "dist", "./") 
         },
         module: {
             rules: [
